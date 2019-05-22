@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ThemeActivity" mce_bogus="1" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="colorControlNormal">@color/tuandai_yellow</item>-->
+        <!--<item name="colorControlActivated">@color/tuandai_yellow</item>-->
+        <!--<item name="colorAccent">@color/tuandai_yellow</item>-->
+        <!--<item name="colorPrimary">@color/tuandai_yellow</item>-->
+        <!--<item name="colorPrimaryDark">@color/black_zero</item>-->
+        <!--<item name="colorControlHighlight">@color/tuandai_yellow</item>-->
+        <!--<item name="colorButtonNormal">@color/tuandai_yellow</item>-->
+        <!--&lt;!&ndash; <item name="android:background">@color/app_background</item> &ndash;&gt;-->
+        <!--<item name="android:alertDialogTheme">@style/AppCompat_dialog</item>-->
+        <!--<item name="android:dialogTheme">@style/AppCompat_dialog</item>-->
+    </style>
+
+    <style name="activityAnimation">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+</resources>

@@ -1,0 +1,5 @@
+include ':app', ':biz_startpage', ':biz_common', ':biz_home', ':biz_play'
+include ':ijkplayer-java'
+include ':ijkplayer-exo'
+project(':ijkplayer-java').projectDir = new File('biz_common/ijkplayer-java')
+project(':ijkplayer-exo').projectDir = new File('biz_common/ijkplayer-exo')

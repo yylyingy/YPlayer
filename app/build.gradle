@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+apply from: '../config/arouter/init.gradle'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        multiDexEnabled true
+        multiDexKeepProguard  file('../config/dexkeep/multidexKeep.pro')
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi','armeabi-v7a','arm64-v8a', 'x86'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':biz_common')
+    implementation project(':biz_startpage')
+    implementation project(':biz_home')
+    implementation project(':biz_play')
+    testImplementation rootProject.ext.dependencies["junit"]
+}
