@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<com.github.yylyingy.common.widget.ripplelayout.RippleFrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    app:mrl_rippleAlpha="0.2"
+    app:mrl_rippleColor="#7F7F8B"
+    app:mrl_rippleHover="true"
+    app:mrl_rippleOverlay="false"
+    android:background="@drawable/test"
+    >
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -14,6 +21,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
+
             android:src="@drawable/video"/>
         <TextView
             android:layout_marginTop="@dimen/dp_5"
@@ -24,4 +32,4 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-</FrameLayout>
+</com.github.yylyingy.common.widget.ripplelayout.RippleFrameLayout>

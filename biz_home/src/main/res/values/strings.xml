@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">biz_home</string>
+    <string name="folders">文件夹</string>
+    <string name="video_count">个视频</string>
+    <string name="double_back_press">再按一次退出YPlayer</string>
 </resources>

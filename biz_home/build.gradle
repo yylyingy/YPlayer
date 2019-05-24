@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply from: '../config/arouter/init.gradle'
+apply plugin: rootProject.ext.plugin.butterknife
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion

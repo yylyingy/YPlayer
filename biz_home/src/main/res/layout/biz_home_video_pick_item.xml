@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.github.yylyingy.common.widget.ripplelayout.RippleFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:mrl_rippleAlpha="0.2"
+    app:mrl_rippleColor="#7F7F8B"
+    app:mrl_rippleHover="true"
+    app:mrl_rippleOverlay="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:id="@+id/layout_duration"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="20dp"
+        android:background="@color/biz_home_ShadowItem">
+
+        <TextView
+            android:id="@+id/txt_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:textColor="#FFFFFF"
+            android:text="08:00"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/tv_file"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toLeftOf="@id/txt_duration"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:textColor="#CCC4C4"
+            android:textSize="12sp"
+            android:maxLines="1"/>
+    </RelativeLayout>
+
+</RelativeLayout>
+</com.github.yylyingy.common.widget.ripplelayout.RippleFrameLayout>

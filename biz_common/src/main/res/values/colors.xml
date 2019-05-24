@@ -6,4 +6,8 @@
 
     <color name="lib_title_base_background">#fefefe</color>
     <color name="lib_title_base_title_color">#212121</color>
+
+    <color name="lib_text_color_white">#fefefe</color>
+
+    <color name="lib_BgItem">#353535</color>
 </resources>

@@ -1,9 +1,12 @@
-package com.github.yylyingy.common.grant;
+package com.github.yylyingy.common.grant.callback;
 
 import android.app.Activity;
 import android.content.Context;
 import android.text.Html;
 
+import com.github.yylyingy.common.grant.OnPermissionCallback;
+import com.github.yylyingy.common.grant.PermissionResult;
+import com.github.yylyingy.common.grant.PermissionUtils;
 import com.github.yylyingy.common.util.ToastUtil;
 import com.github.yylyingy.common.widget.dialog.CommonTipDialog;
 

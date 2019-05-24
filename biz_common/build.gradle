@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply from: '../config/arouter/init.gradle'
-
+apply plugin: rootProject.ext.plugin.butterknife
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
@@ -10,7 +10,7 @@ android {
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [ moduleName : project.getName() ]
+                arguments = [moduleName: project.getName()]
             }
         }
     }
@@ -40,12 +40,16 @@ dependencies {
 //    api rootProject.ext.dependencies["multidex"]
     api rootProject.ext.dependencies["appcompat"]
     api rootProject.ext.dependencies["constraint-layout"]
-    api 'io.reactivex.rxjava2:rxjava:2.1.0'
-    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //butterknife
+    api rootProject.ext.dependencies["butterknife"]
+    api rootProject.ext.dependencies["recycleview"]
+    api rootProject.ext.dependencies["rxjava2"]
+    api rootProject.ext.dependencies["rxandroid"]
     //permissions
-    api 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    api rootProject.ext.dependencies["rxpermission"]
     //other
-    api 'com.orhanobut:logger:1.15'
-//    api project(':ijkplayer-exo')
-//    api project(':ijkplayer-java')
+    api rootProject.ext.dependencies['logger']
+    api rootProject.ext.dependencies['glide']
+    api project(':ijkplayer-exo')
+    api project(':ijkplayer-java')
 }

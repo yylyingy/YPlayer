@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rippelColor">#FFFFFF</color>
+    <attr name="ripple_alpha" format="integer" />
+    <attr name="ripple_framerate" format="integer"/>
+    <attr name="ripple_zoomDuration"/>
+    <attr name="ripple_rippleDuration" format="integer"/>
+    <attr name="ripple_color" format="color" />
+    <attr name="ripple_centered" format="boolean" />
+    <attr name="ripple_type" format="enum">
+        <enum name="simpleRipple" value="0"/>
+        <enum name="doubleRipple" value="1"/>
+        <enum name="rectangle" value="2" />
+    </attr>
+    <attr name="ripple_ripplePadding" format="dimension" />
+    <attr name="ripple_zoom" format="boolean" />
+    <attr name="ripple_zoomScale" format="float" />
+    <declare-styleable name="RippleRelativeLayout">
+        <attr name="ripple_alpha"/>
+        <attr name="ripple_framerate" />
+        <attr name="ripple_zoomDuration"/>
+        <attr name="ripple_rippleDuration"/>
+        <attr name="ripple_color" />
+        <attr name="ripple_centered" />
+        <attr name="ripple_type"/>
+        <attr name="ripple_ripplePadding"/>
+        <attr name="ripple_zoom"  />
+        <attr name="ripple_zoomScale"  />
+
+    </declare-styleable>
+
+    <declare-styleable name="RippleFrameLayout3">
+        <attr name="ripple_alpha"/>
+        <attr name="ripple_framerate" />
+        <attr name="ripple_zoomDuration"/>
+        <attr name="ripple_rippleDuration"/>
+        <attr name="ripple_color" />
+        <attr name="ripple_centered" />
+        <attr name="ripple_type"/>
+        <attr name="ripple_ripplePadding"/>
+        <attr name="ripple_zoom"  />
+        <attr name="ripple_zoomScale"  />
+    </declare-styleable>
+
+    <eat-comment/>
+    <color name="transparent">#00FFFFFF</color>
+    <declare-styleable name="RippleFrameLayout">
+        <attr format="color" localization="suggested" name="mrl_rippleColor"/>
+        <attr format="dimension" localization="suggested" name="mrl_rippleDimension"/>
+        <attr format="boolean" localization="suggested" name="mrl_rippleOverlay"/>
+        <attr format="float" localization="suggested" name="mrl_rippleAlpha"/>
+        <attr format="integer" localization="suggested" name="mrl_rippleDuration"/>
+        <attr format="integer" localization="suggested" name="mrl_rippleFadeDuration"/>
+        <attr format="boolean" localization="suggested" name="mrl_rippleHover"/>
+        <attr format="color" localization="suggested" name="mrl_rippleBackground"/>
+        <attr format="boolean" localization="suggested" name="mrl_rippleDelayClick"/>
+        <attr format="boolean" localization="suggested" name="mrl_ripplePersistent"/>
+        <attr format="boolean" localization="suggested" name="mrl_rippleInAdapter"/>
+        <attr format="dimension" localization="suggested" name="mrl_rippleRoundedCorners"/>
+    </declare-styleable>
+
+</resources>

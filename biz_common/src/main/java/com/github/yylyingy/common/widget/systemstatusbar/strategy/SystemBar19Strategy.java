@@ -2,6 +2,7 @@ package com.github.yylyingy.common.widget.systemstatusbar.strategy;
 
 import android.app.Activity;
 import android.os.Build;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -42,8 +43,7 @@ public class SystemBar19Strategy extends SystemBarBaseStrategy {
         win.setAttributes(winParams);
 
         int color = getConfig().getColor();
-        if (!MIUISetStatusBarDarkMode(win,getConfig().isFrontDark())
-                && !FlymeSetStatusBarDarkMode(win,getConfig().isFrontDark())) {
+        if (setDarkStatus(getConfig().isFrontDark())) {
             color = getConfig().getLollipopColor();
         }
 
@@ -53,5 +53,23 @@ public class SystemBar19Strategy extends SystemBarBaseStrategy {
         tintManager.setStatusBarTintColor(color);
 
         return true;
+    }
+
+    @Override
+    public boolean setDarkStatus(boolean dark) {
+        boolean result = !MIUISetStatusBarDarkMode(getActivity().getWindow(),dark)
+                && !FlymeSetStatusBarDarkMode(getActivity().getWindow(),dark);
+        //状态栏字体图标颜色
+        View decor = getActivity().getWindow().getDecorView();
+        if (dark) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR //浅色状态栏(字体图标白色)
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN //contentView 全屏(置于statusbar之下)
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            }
+        } else {
+            decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+        }
+        return result;
     }
 }

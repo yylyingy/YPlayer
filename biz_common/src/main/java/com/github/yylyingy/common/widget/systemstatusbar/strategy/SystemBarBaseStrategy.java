@@ -26,6 +26,7 @@ public abstract class SystemBarBaseStrategy {
     }
 
     public abstract boolean setStatusBar();
+    public abstract boolean setDarkStatus(boolean dark);
 
     protected void setFitSystemWindow() {
         if (getConfig().getFitsLayout() != null) {

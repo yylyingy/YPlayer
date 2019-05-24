@@ -31,14 +31,31 @@ public class SystemBar21Strategy extends SystemBarBaseStrategy {
             setFitSystemWindow();
         }
         getActivity().getWindow().getDecorView().setSystemUiVisibility(option);
-
         int color = getConfig().getColor();
-        if (!MIUISetStatusBarDarkMode(getActivity().getWindow(),getConfig().isFrontDark())
-                && !FlymeSetStatusBarDarkMode(getActivity().getWindow(),getConfig().isFrontDark())) {
+        if (setDarkStatus(getConfig().isFrontDark())) {
             color = getConfig().getLollipopColor();
         }
 
         getActivity().getWindow().setStatusBarColor(color);
         return true;
+    }
+
+    @Override
+    public boolean setDarkStatus(boolean dark) {
+        boolean result = !MIUISetStatusBarDarkMode(getActivity().getWindow(),dark)
+                && !FlymeSetStatusBarDarkMode(getActivity().getWindow(),dark);
+        //状态栏字体图标颜色
+        View decor = getActivity().getWindow().getDecorView();
+        if (dark) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR //浅色状态栏(字体图标白色)
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN //contentView 全屏(置于statusbar之下)
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            }
+        } else {
+            decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+        }
+        return result;
+
     }
 }

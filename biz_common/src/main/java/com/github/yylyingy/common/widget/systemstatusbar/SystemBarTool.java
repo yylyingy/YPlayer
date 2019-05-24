@@ -37,4 +37,16 @@ public class SystemBarTool {
             return new SystemBar23Strategy(activity,config).setStatusBar();
         }
     }
+
+    public static boolean setDarkStatusBar(Activity activity,boolean dark) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+            return false;
+        } else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            return new SystemBar19Strategy(activity,new SystemBarConfig()).setDarkStatus(dark);
+        } else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            return new SystemBar21Strategy(activity,new SystemBarConfig()).setDarkStatus(dark);
+        } else {
+            return new SystemBar23Strategy(activity,new SystemBarConfig()).setDarkStatus(dark);
+        }
+    }
 }

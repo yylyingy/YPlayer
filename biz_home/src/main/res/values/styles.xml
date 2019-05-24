@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="MainMemu" parent="Widget.AppCompat.ImageButton">
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/biz_home_memu_btn</item>
+    </style>
 </resources>

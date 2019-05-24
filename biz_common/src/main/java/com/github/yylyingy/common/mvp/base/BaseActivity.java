@@ -1,8 +1,12 @@
 package com.github.yylyingy.common.mvp.base;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.github.yylyingy.common.R;
 import com.github.yylyingy.common.widget.systemstatusbar.SystemBarConfig;
@@ -10,6 +14,8 @@ import com.github.yylyingy.common.widget.systemstatusbar.SystemBarTool;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * <br> ClassName:
@@ -19,6 +25,9 @@ import androidx.appcompat.app.AppCompatActivity;
  * <br> Date:        2019/5/22 17:24
  */
 public abstract class BaseActivity extends AppCompatActivity {
+    protected final String TAG = this.getClass().getSimpleName();
+    private Unbinder bind;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +35,22 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     public void setContentView(int layoutResID) {
+
         super.setContentView(layoutResID);
         initSystemStatusBar();
+        bind = ButterKnife.bind(this);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        bind.unbind();
     }
 
     @Override
@@ -42,8 +64,14 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.setContentView(view);
         initSystemStatusBar();
     }
+
+    //
     public void initSystemStatusBar() {
-        SystemBarTool.setStatusBarColor(this, getStatusBarConfig());
+//        SystemBarTool.setStatusBarColor(this, getStatusBarConfig());
+    }
+
+    public void darkStatusBar() {
+        SystemBarTool.setDarkStatusBar(this,true);
     }
 
     protected SystemBarConfig getStatusBarConfig() {
