@@ -5,7 +5,7 @@
     <application>
         <activity
             android:name=".view.MainActivity"
-            android:theme="@style/TranslucentTheme"
+            android:theme="@style/ThemeActivity"
             android:launchMode="singleTop">
         </activity>
     </application>

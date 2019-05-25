@@ -7,7 +7,7 @@
             android:name=".view.SplashScreenActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/TranslucentTheme">
+            android:theme="@style/ThemeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
