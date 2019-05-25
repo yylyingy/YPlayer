@@ -8,6 +8,7 @@
     tools:context=".view.PlayActivity">
     <com.github.yylyingy.common.widget.media.IjkVideoView
         android:id="@+id/play_view"
+        android:background="@color/lib_BgItem"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

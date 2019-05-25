@@ -79,18 +79,26 @@ public class MainActivity extends BaseActivity {
 
     private void initClick() {
         //folder click
-        mVideoFolderRecycleAdapter.setOnFolderClickListener((view, position, directory) -> {
-            mVideoRecyclerView.setAdapter(mVideoRecycleAdapter);
-            mVideoRecycleAdapter.getDataSet().clear();
-            mVideoRecycleAdapter.add(directory.getFiles());
-            mGridLayoutManager.setSpanCount(2);
-            mOpenFolder = true;
-            mTvTitle.setText(directory.getName());
+        mVideoFolderRecycleAdapter.setOnFolderClickListener(new VideoFolderRecycleAdapter.OnFolderClickListener() {
+            @Override
+            public void onClick(View view, int position, Directory directory) {
+                mVideoRecyclerView.setAdapter(mVideoRecycleAdapter);
+                mVideoRecycleAdapter.getDataSet().clear();
+                mVideoRecycleAdapter.add(directory.getFiles());
+                mGridLayoutManager.setSpanCount(2);
+                mOpenFolder = true;
+                mTvTitle.setText(directory.getName());
+            }
         });
         //video file click
-        mVideoRecycleAdapter.setOnItemClickListener((v, position, videoFile) -> ARouter.getInstance().build(PlayRouter.PLAY_ROUTE).withParcelable(
-                AppConstants.ARG_ONE,videoFile
-        ).navigation());
+        mVideoRecycleAdapter.setOnItemClickListener(new VideoRecycleAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(View v, int position, VideoFile videoFile) {
+                ARouter.getInstance().build(PlayRouter.PLAY_ROUTE).withParcelable(
+                        AppConstants.ARG_ONE,videoFile
+                ).navigation();
+            }
+        });
     }
 
     private void requestReadPermission() {

@@ -66,14 +66,14 @@ public class VideoRecycleAdapter extends BaseAdapter<VideoFile,VideoRecycleAdapt
                 .into(holder.mIvThumbnail);
         holder.mTvFile.setText(file.getName());
         holder.mDuration.setText(Util.getDurationString(file.getDuration()));
-//        holder.mItemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (null != mOnItemClickListener) {
-//                    mOnItemClickListener.onClick(v,position,file);
-//                }
-//            }
-//        });
+        holder.mItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (null != mOnItemClickListener) {
+                    mOnItemClickListener.onClick(v,position,file);
+                }
+            }
+        });
     }
 
     @Override

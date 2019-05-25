@@ -3,7 +3,9 @@
           package="com.github.yylyingy.play">
 
     <application>
-        <activity android:name=".view.PlayActivity">
+        <!--singleTask :only one instance in an activity task-->
+        <activity android:name=".view.PlayActivity"
+                  android:launchMode="singleTask">
         </activity>
     </application>
 
