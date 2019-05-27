@@ -14,8 +14,8 @@ import java.util.Arrays;
  * <br> ClassName:   CommonPermissionCallBack
  * <br> Description: 团贷网定制权限CallBack
  * <br>
- * <br> Author:      wujun
- * <br> Date:        2017/9/13 18:04
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public class CommonPermissionCallBack extends AbstractOnPermissionCallBack {
 
@@ -63,8 +63,8 @@ public class CommonPermissionCallBack extends AbstractOnPermissionCallBack {
     }
     /**
      *<br> Description: 弹出Dialog
-     *<br> Author:      wujun
-     *<br> Date:        2017/9/13 18:37
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      */
     private void  showDialog(String message)  {
         if (mActivity == null || mActivity.isFinishing()) {

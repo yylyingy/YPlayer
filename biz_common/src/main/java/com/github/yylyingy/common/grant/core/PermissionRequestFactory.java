@@ -8,8 +8,8 @@ import java.lang.ref.WeakReference;
  * <br> ClassName:   PermissionRequestFactory
  * <br> Description: 权限工厂类
  * <br>
- * <br> Author:      wujun
- * <br> Date:        2017/9/12 11:26
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public class PermissionRequestFactory {
 

@@ -6,8 +6,8 @@ import android.text.TextUtils;
  * <br> ClassName:   LoggerManager
  * <br> Description: 日志管理类
  * <br>
- * <br> Author:      hehaodong
- * <br> Date:        2017-05-31 17:04
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public class LoggerManager {
 
@@ -16,8 +16,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 设置默认TAG
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:14
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param tag String
      */
@@ -29,8 +29,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 设置ILogger
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:14
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param newLogger ILogger
      */
@@ -43,8 +43,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印详细信息，默认Tag
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param msg String
      */
@@ -56,8 +56,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印详细信息，自定义Tag
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param tag String
      * @param msg String
@@ -70,8 +70,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印详细信息，自定义Tag方法，还有异常信息
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param tag String
      * @param msg String
@@ -85,8 +85,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印debug信息，默认Tag
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param msg String
      */
@@ -98,8 +98,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印debug信息，自定义Tag
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param tag String
      * @param msg String
@@ -112,8 +112,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印debug信息，自定义Tag方法，还有异常信息
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param tag String
      * @param msg String
@@ -127,8 +127,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印信息，默认Tag
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param msg String
      */
@@ -140,8 +140,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印信息，自定义Tag
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param tag String
      * @param msg String
@@ -154,8 +154,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印信息，自定义Tag方法，还有异常信息
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param tag String
      * @param msg String
@@ -169,8 +169,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印警告信息，默认Tag
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param msg String
      */
@@ -182,8 +182,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印警告信息，自定义Tag
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param tag String
      * @param msg String
@@ -196,8 +196,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印警告信息，自定义Tag方法，还有异常信息
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param tag String
      * @param msg String
@@ -211,8 +211,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印错误信息，默认Tag
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param msg String
      */
@@ -224,8 +224,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印错误信息，自定义Tag
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param tag String
      * @param msg String
@@ -238,8 +238,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: 打印错误信息，自定义Tag方法，还有异常信息
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:16
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param tag String
      * @param msg String
@@ -253,8 +253,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: JSON格式，打印信息，默认tag
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:20
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param msg String
      */
@@ -266,8 +266,8 @@ public class LoggerManager {
 
     /**
      *<br> Description: JSON格式，打印信息，默认tag
-     *<br> Author:      liaoshengjian
-     *<br> Date:        2017/6/12 16:20
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param tag String
      * @param msg String

@@ -7,8 +7,8 @@ import android.view.ViewGroup;
  * <br> ClassName:   SystemBarConfig                        
  * <br> Description: todo(这里用一句话描述这个类的作用)   
  * <br>  
- * <br> Author:      yexiaochuan                             
- * <br> Date:        2018/4/26 16:53                     
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public class SystemBarConfig {
     int color;

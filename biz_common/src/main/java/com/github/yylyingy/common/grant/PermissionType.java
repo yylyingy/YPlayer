@@ -6,8 +6,8 @@ import android.Manifest;
  * <br> ClassName:   PermissionType
  * <br> Description: 权限枚举
  * <br>
- * <br> Author:      wujun
- * <br> Date:        2017/8/3 9:48
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public enum  PermissionType {
 
@@ -70,8 +70,8 @@ public enum  PermissionType {
 
     /**
      *<br> Description: 获取权限对应的中文名字
-     *<br> Author:      wujun
-     *<br> Date:        2017/8/3 9:52
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      */
     static public String getValueByKey(String key) {
         for (PermissionType permissionType : PermissionType.values()) {

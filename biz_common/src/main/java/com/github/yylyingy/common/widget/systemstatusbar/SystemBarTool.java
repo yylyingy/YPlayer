@@ -13,8 +13,8 @@ import androidx.annotation.NonNull;
  * <br> ClassName:   SystemBarTool
  * <br> Description: 沉浸式状态栏的工具
  * <br>
- * <br> Author:      wuheng
- * <br> Date:        2017/9/1 16:39
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public class SystemBarTool {
     private static boolean SYSTEM_BAR_SWITCH = true;

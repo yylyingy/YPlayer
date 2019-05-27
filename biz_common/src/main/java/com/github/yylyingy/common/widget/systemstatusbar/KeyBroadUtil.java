@@ -9,8 +9,8 @@ import android.view.ViewTreeObserver;
  * <br> ClassName:   KeyBroadUtil
  * <br> Description: 监视键盘的高度
  * <br>
- * <br> Author:      wuheng
- * <br> Date:        2017/8/7 14:23
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 
 public class KeyBroadUtil {

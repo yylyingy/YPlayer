@@ -13,8 +13,8 @@ import androidx.annotation.RequiresApi;
  * <br> Description: 兼容api21与api22的沉浸式状态栏
  * <br>1.api21与api22不支持修改状态栏字体颜色，目前只有小米跟魅族的ROM兼容
  * <br>2.小米和魅族的状态栏颜色使用参数color，其他机型使用lollipopColor
- * <br> Author:      yexiaochuan
- * <br> Date:        2018/4/27 17:37
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public class SystemBar21Strategy extends SystemBarBaseStrategy {
 

@@ -28,8 +28,8 @@ import static com.github.yylyingy.common.grant.PermissionResult.Type.NO_ASK;
  * <br> ClassName:   PermissionRequestImpl
  * <br> Description: 权限申请实现类
  * <br>
- * <br> Author:      wujun
- * <br> Date:        2017/9/12 10:35
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public class PermissionRequestImpl  implements IPermissionRequest {
 
@@ -72,8 +72,8 @@ public class PermissionRequestImpl  implements IPermissionRequest {
 
     /**
      *<br> Description: 开始请求
-     *<br> Author:      wujun
-     *<br> Date:        2017/9/12 10:56
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      */
     private void onRequest() {
         if (mCallBack == null) {
@@ -118,8 +118,8 @@ public class PermissionRequestImpl  implements IPermissionRequest {
 
     /**
      *<br> Description: 处理权限申请结束
-     *<br> Author:      wujun
-     *<br> Date:        2017/9/12 18:25
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param mRefusedList    拒绝的权限
      * @param mNoAskList  不再询问的权限
      * @param mAllowList  允许的权限
@@ -174,8 +174,8 @@ public class PermissionRequestImpl  implements IPermissionRequest {
 
     /**
      *<br> Description: 权限是否通过，兼容targetSdkVersion < Android M,
-     *<br> Author:      wujun
-     *<br> Date:        2017/9/1 10:06
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      */
     private boolean  isGranted(Permission permission) {
         int targetVersion = getTargetVersion();
@@ -189,8 +189,8 @@ public class PermissionRequestImpl  implements IPermissionRequest {
 
     /**
      *<br> Description: 获取targetViersion
-     *<br> Author:      wujun
-     *<br> Date:        2017/9/1 10:50
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      */
     private int getTargetVersion() {
         try {

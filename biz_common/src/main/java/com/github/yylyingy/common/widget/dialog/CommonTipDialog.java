@@ -25,8 +25,8 @@ import androidx.annotation.StyleRes;
  * <br> ClassName:   CommonTipDialog
  * <br> Description: 带有确定与取消按钮的弹窗
  * <br>
- * <br> Author:      yexiaochuan
- * <br> Date:        2017/8/21 16:12
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public class CommonTipDialog extends AlertDialog {
     private boolean confirmFlag;
@@ -44,8 +44,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 配置全局弹窗样式
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/10/31 16:53
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      */
     public static void configStyle(@StyleRes int id) {
         mStyleId = id;
@@ -82,8 +82,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 判断dialog是否有效
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/10/31 16:53
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      */
     protected boolean checkIsActive() {
         if (!(mContext instanceof Activity) || (((Activity) mContext).isFinishing())) {
@@ -94,8 +94,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 初始化
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/8/21 17:20
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param isCanCancel
      *                  是否可取消
      * @return
@@ -106,8 +106,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 初始化
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/8/21 17:20
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param isCanCancel
      *                  是否可取消
      * @param isCanCancelOnTouchOutSide
@@ -127,8 +127,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 设置标题
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/8/21 17:21
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param title
      *                  标题
      * @return
@@ -140,8 +140,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 设置标题
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/8/21 17:21
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param title
      *                  标题
      * @param tf
@@ -171,8 +171,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 设置内容
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/8/21 17:21
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param content
      *                  内容
      * @return
@@ -184,8 +184,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 设置内容
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/8/21 17:58
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param content
      *                  内容
      * @param gravity
@@ -213,8 +213,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 设置是否不再提醒
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2018/1/8 11:48
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param key
      *                  当前弹窗标记位
      * @return
@@ -257,8 +257,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 设置确定按钮
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/8/21 17:58
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param text
      *                  按钮文本
      * @return
@@ -270,8 +270,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 设置确定按钮,倒计时
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/8/21 17:59
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param text
      *                  按钮文本
      * @param time
@@ -307,8 +307,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 设置倒计时功能
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/8/21 17:59
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      */
     private CommonTipDialog setCutDownFunction(final TextView confirmBtn, final CharSequence text, int time) {
         final Handler handler = new Handler() {
@@ -345,8 +345,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 设置取消按钮
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/8/21 17:59
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param text
      *                  按钮文本
      * @return
@@ -375,8 +375,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 设置按钮背景，适配窗口圆角
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/8/21 18:00
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      */
     private void setBtnBackground() {
         findViewById(R.id.dialog_lly).setVisibility(View.VISIBLE);
@@ -423,8 +423,8 @@ public class CommonTipDialog extends AlertDialog {
 
     /**
      *<br> Description: 设置按钮点击事件
-     *<br> Author:      yexiaochuan
-     *<br> Date:        2017/8/21 18:00
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      */
     public CommonTipDialog setOnClickListener(final OnConfirmListener listener) {
         if (!checkIsActive()) {
@@ -462,8 +462,8 @@ public class CommonTipDialog extends AlertDialog {
      * <br> ClassName:   DialogUtil
      * <br> Description: OnConfirmListener简单实例
      * <br>
-     * <br> Author:      谢文良
-     * <br> Date:        2017/8/22 10:09
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      */
     public static class SimpleOnConfirmListener implements OnConfirmListener {
 

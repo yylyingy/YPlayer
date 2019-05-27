@@ -12,6 +12,7 @@ import com.github.yylyingy.common.arouter.HomePage;
 import com.github.yylyingy.common.arouter.PlayRouter;
 import com.github.yylyingy.common.constant.AppConstants;
 import com.github.yylyingy.common.grant.callback.AbstractOnPermissionCallBack;
+import com.github.yylyingy.common.grant.callback.CommonPermissionCallBack;
 import com.github.yylyingy.common.grant.core.PermissionRequestFactory;
 import com.github.yylyingy.common.log.LoggerManager;
 import com.github.yylyingy.common.mediafilter.MediaFileFilter;
@@ -103,7 +104,7 @@ public class MainActivity extends BaseActivity {
 
     private void requestReadPermission() {
         PermissionRequestFactory.create(this).addPermission(Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE).request(new AbstractOnPermissionCallBack(this, true) {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE).request(new CommonPermissionCallBack(this, true) {
 
             @Override
             public void onRequestAllow(String... strings) {

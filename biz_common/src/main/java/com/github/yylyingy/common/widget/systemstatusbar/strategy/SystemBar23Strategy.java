@@ -12,8 +12,8 @@ import androidx.annotation.RequiresApi;
  * <br> ClassName:   SystemBar23Strategy
  * <br> Description: api23以上兼容沉浸式状态栏
  * <br>
- * <br> Author:      yexiaochuan
- * <br> Date:        2018/4/27 17:37
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public class SystemBar23Strategy extends SystemBarBaseStrategy {
     public SystemBar23Strategy(Activity activity, SystemBarConfig config) {

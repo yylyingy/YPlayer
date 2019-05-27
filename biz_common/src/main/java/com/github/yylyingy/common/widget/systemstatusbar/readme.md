@@ -45,8 +45,8 @@ public static void setStatusBarColor(Activity activity, int color, boolean dark)
 ```java
 /**
  * <br> Description:
- * <br> Author:      wuheng
- * <br> Date:        2017/9/4 10:27
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30 
  *
  * @param color Color值,如Color.WHITE
  * @param dark  字体颜色是否设置为灰色  true 为设置灰， false 为白
@@ -56,8 +56,8 @@ public void setStatusBarColor(int color, boolean dark) {
 }
 /**
  * <br> Description:
- * <br> Author:      wuheng
- * <br> Date:        2017/9/4 10:28
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30 
  *
  * @param colorHex 16进制的颜色 如"#99ffffff",为白色，前两位是透明度，后6位颜色值
  * @param dark     字体颜色是否设置为灰色  true 为设置灰， false 为白
@@ -67,8 +67,8 @@ public void setStatusBarColor(String colorHex, boolean dark) {
 }
 /**
  * <br> Description: 在super.onCreate调用
- * <br> Author:      wuheng
- * <br> Date:        2017/9/4 11:58
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30 
  */
 public void setFitWindow(boolean fitWindow) {
     this.fitWindow = fitWindow;
@@ -80,8 +80,8 @@ public boolean isFitWindow() {
 
 /**
  * <br> Description: 监视处理 navigation 高度事件
- * <br> Author:      wuheng
- * <br> Date:        2017/9/4 9:25
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30 
  */
 private ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener = () -> {
     if (NavigationBarTool.hasNavigationBar(BaseActivity.this)) {
@@ -95,8 +95,8 @@ private ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener = () -> {
 
 /**
  * <br> Description: 调整rootView,以适应屏幕大小
- * <br> Author:      wuheng
- * <br> Date:        2017/9/4 14:01
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30 
  */
 protected void changeRootViewFitWindow() {
     int navigationHeight = NavigationBarTool.checkDeviceHasNavigationBar(getWindowManager()) ?
@@ -143,8 +143,8 @@ import android.view.ViewTreeObserver;
  * <br> ClassName:   KeyBroadUtil
  * <br> Description: 监视键盘的高度
  * <br>
- * <br> Author:      wuheng
- * <br> Date:        2017/8/7 14:23
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30 
  */
 
 public class KeyBroadUtil {
@@ -164,8 +164,8 @@ public class KeyBroadUtil {
 
     /**
      * <br> Description: 返回键盘的高度
-     * <br> Author:      wuheng
-     * <br> Date:        2017/9/4 14:37
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30 
      */
     public static int getKeyBroadKeyHeight() {
         return keyBroadKeyHeight;
@@ -173,8 +173,8 @@ public class KeyBroadUtil {
 
     /**
      * <br> Description: todo(监视键盘的高度变化)
-     * <br> Author:      wuheng
-     * <br> Date:        2017/8/4 16:22
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30 
      *
      * @param activity activity
      * @param listener 事件
@@ -204,8 +204,8 @@ public class KeyBroadUtil {
 
     /**
      * <br> Description: todo(解绑)
-     * <br> Author:      wuheng
-     * <br> Date:        2017/8/7 14:25
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30 
      */
     public static void removeSofeKeyBoardVisibleListener() {
         keyBoardVisibleListener = null;

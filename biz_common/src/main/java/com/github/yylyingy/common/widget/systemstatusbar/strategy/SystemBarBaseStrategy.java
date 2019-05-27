@@ -13,8 +13,8 @@ import java.lang.reflect.Method;
  * <br> ClassName:   SystemBarBaseStrategy
  * <br> Description: todo(这里用一句话描述这个类的作用)
  * <br>
- * <br> Author:      yexiaochuan
- * <br> Date:        2018/4/27 16:56
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public abstract class SystemBarBaseStrategy {
     private SystemBarConfig mConfig;

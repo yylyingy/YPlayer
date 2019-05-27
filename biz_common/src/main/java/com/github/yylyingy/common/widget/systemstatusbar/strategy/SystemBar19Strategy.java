@@ -17,8 +17,8 @@ import androidx.annotation.RequiresApi;
  * <br>1.api19如果不开启FullScreen模式，无法设置状态栏颜色
  * <br>2.api19不支持修改状态栏字体颜色，目前只有小米跟魅族的ROM兼容
  * <br>3.小米和魅族的状态栏颜色使用参数color，其他机型使用lollipopColor
- * <br> Author:      yexiaochuan
- * <br> Date:        2018/4/27 16:57
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public class SystemBar19Strategy extends SystemBarBaseStrategy {
 

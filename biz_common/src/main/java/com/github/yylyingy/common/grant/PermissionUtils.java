@@ -13,15 +13,15 @@ import androidx.annotation.NonNull;
  * <br> ClassName:   PermissionUtils
  * <br> Description: 权限工具类
  * <br>
- * <br> Author:      wujun
- * <br> Date:        2017/9/9 14:01
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public class PermissionUtils {
 
     /**
      *<br> Description: 打开设置
-     *<br> Author:      wujun
-     *<br> Date:        2017/8/3 9:28
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param context        上下文
      * @param packageName 包名
      */
@@ -50,8 +50,8 @@ public class PermissionUtils {
 
     /**
      *<br> Description: 跳转到应用页面
-     *<br> Author:      wujun
-     *<br> Date:        2017/8/4 8:54
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      */
     public  static void jumptoApplicationPage(@NonNull Context context) {
         Intent intent;
@@ -61,8 +61,8 @@ public class PermissionUtils {
 
     /**
      *<br> Description: 获取权限
-     *<br> Author:      wujun
-     *<br> Date:        2017/8/3 14:43
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param permissionNames    权限名称
      * @return
      */

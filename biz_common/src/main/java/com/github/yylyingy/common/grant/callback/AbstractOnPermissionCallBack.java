@@ -21,8 +21,8 @@ import io.reactivex.functions.Consumer;
  * <br> ClassName:   AbstractOnPermissionCallBack
  * <br> Description: 默认回调
  * <br>
- * <br> Author:      wujun
- * <br> Date:        2017/8/3 11:32
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public abstract class AbstractOnPermissionCallBack implements OnPermissionCallback
         ,Consumer<List<PermissionResult>> {
@@ -69,8 +69,8 @@ public abstract class AbstractOnPermissionCallBack implements OnPermissionCallba
 
     /**
      *<br> Description: 权限处理
-     *<br> Author:      wujun
-     *<br> Date:        2017/9/12 18:28
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      *
      * @param permissionResults    所有的权限
      * @param mRefusedList  拒绝的权限
@@ -127,8 +127,8 @@ public abstract class AbstractOnPermissionCallBack implements OnPermissionCallba
 
     /**
      *<br> Description: 显示对话框
-     *<br> Author:      wujun
-     *<br> Date:        2017/8/3 9:43
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      * @param context          上下文
      * @param packageName   包名
      * @param message  权限名称
@@ -158,8 +158,8 @@ public abstract class AbstractOnPermissionCallBack implements OnPermissionCallba
 
     /**
      *<br> Description: 不去设置页-取消
-     *<br> Author:      wujun
-     *<br> Date:        2017/9/5 17:57
+     * <br> Author:      Yangyl
+     * <br> Date:        2019/5/27 10:30
      */
     protected void  onSettingDialogCancel(){
 

@@ -4,8 +4,8 @@ package com.github.yylyingy.common.grant;
  * <br> ClassName:   PermissionResult
  * <br> Description: 单个权限的请求结果
  * <p>
- * <br> Author:      longzefeng
- * <br> Date:        2017/9/6
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public class PermissionResult {
 

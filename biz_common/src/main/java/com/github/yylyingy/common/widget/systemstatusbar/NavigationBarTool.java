@@ -19,8 +19,8 @@ import java.lang.reflect.Method;
  * 在onPause（）时移除mContainer.getViewTreeObserver().removeGlobalOnLayoutListener(this);
  * 在onGlobalLayout（）中调用checkDeviceHasNavigationBar来检查从而进行判断。
  * <p>
- * Created by kevinwu
- * on 2017/5/27.
+ * <br> Author:      Yangyl
+ * <br> Date:        2019/5/27 10:30
  */
 public class NavigationBarTool {
     /**
