@@ -1,6 +1,8 @@
 package com.github.yylyingy.yplayer;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.github.yylyingy.common.log.DebugLogger;
+import com.github.yylyingy.common.log.LoggerManager;
 import com.github.yylyingy.common.util.AppUtil;
 
 import androidx.multidex.MultiDexApplication;
@@ -20,6 +22,8 @@ public class App extends MultiDexApplication {
         if (com.github.yylyingy.yplayer.BuildConfig.DEBUG) {
                 ARouter.openLog();     // ARouter打印日志
             ARouter.openDebug();   // ARouter开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
+            LoggerManager.setTag("YPlayer");
+            LoggerManager.setLogger(new DebugLogger());
         }
         ARouter.init(this);
     }

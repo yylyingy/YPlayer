@@ -2,7 +2,9 @@ package com.github.yylyingy.home.view;
 
 import android.Manifest;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,7 +13,6 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.github.yylyingy.common.arouter.HomePage;
 import com.github.yylyingy.common.arouter.PlayRouter;
 import com.github.yylyingy.common.constant.AppConstants;
-import com.github.yylyingy.common.grant.callback.AbstractOnPermissionCallBack;
 import com.github.yylyingy.common.grant.callback.CommonPermissionCallBack;
 import com.github.yylyingy.common.grant.core.PermissionRequestFactory;
 import com.github.yylyingy.common.log.LoggerManager;
@@ -20,11 +21,14 @@ import com.github.yylyingy.common.mediafilter.callback.FilterResultCallback;
 import com.github.yylyingy.common.mediafilter.entity.Directory;
 import com.github.yylyingy.common.mediafilter.entity.VideoFile;
 import com.github.yylyingy.common.mvp.base.BaseActivity;
+import com.github.yylyingy.common.util.VideoFD;
 import com.github.yylyingy.common.widget.systemstatusbar.SystemBarConfig;
 import com.github.yylyingy.home.R;
 import com.github.yylyingy.home.R2;
 import com.github.yylyingy.home.adapter.VideoFolderRecycleAdapter;
 import com.github.yylyingy.home.adapter.VideoRecycleAdapter;
+import com.github.yylyingy.home.widget.NetPathDialog;
+import com.github.yylyingy.home.widget.popwindow.ReleasePopupWindow;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,6 +42,7 @@ import butterknife.BindView;
 @Route(path = HomePage.HOME_PAGE,name = "主页")
 public class MainActivity extends BaseActivity {
     TextView mTvTitle;
+    View mMemu;
     @BindView(R2.id.recycle_view)
     RecyclerView mVideoRecyclerView;
     GridLayoutManager mGridLayoutManager;
@@ -50,6 +55,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.biz_home_activity_main);
         mTvTitle = findViewById(R.id.title);
+        mMemu = findViewById(R.id.memu);
         mVideoRecyclerView = findViewById(R.id.recycle_view);
         mGridLayoutManager = new GridLayoutManager(this,3);
         mVideoRecycleAdapter = new VideoRecycleAdapter(this);
@@ -79,6 +85,43 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initClick() {
+        mMemu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ReleasePopupWindow popupWindow = new ReleasePopupWindow(MainActivity.this);
+                View view = getLayoutInflater().inflate(R.layout.biz_home_pop_memu,null);
+                popupWindow.setContentView(view);
+                popupWindow.showUp(v);
+                view.findViewById(R.id.net_path).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popupWindow.dismiss();
+                        NetPathDialog netPathDialog = new NetPathDialog(MainActivity.this);
+                        netPathDialog.show();
+                        netPathDialog.setDialogCallback(new NetPathDialog.DialogCallBack() {
+                            @Override
+                            public void onConfirm() {
+                                EditText mUrlEdit = netPathDialog.findViewById(R.id.net_path);
+                                if (!TextUtils.isEmpty(mUrlEdit.getText())) {
+                                    VideoFD videoFD = new VideoFD();
+                                    videoFD.setPath(mUrlEdit.getText().toString());
+                                    ARouter.getInstance().build(PlayRouter.PLAY_ROUTE).withParcelable(
+                                            AppConstants.ARG_ONE,videoFD
+                                    ).navigation();
+                                } else {
+                                    mUrlEdit.setError("请输入链接");
+                                }
+                            }
+
+                            @Override
+                            public void onCancel() {
+                                netPathDialog.dismiss();
+                            }
+                        });
+                    }
+                });
+            }
+        });
         //folder click
         mVideoFolderRecycleAdapter.setOnFolderClickListener(new VideoFolderRecycleAdapter.OnFolderClickListener() {
             @Override
@@ -95,8 +138,10 @@ public class MainActivity extends BaseActivity {
         mVideoRecycleAdapter.setOnItemClickListener(new VideoRecycleAdapter.OnItemClickListener() {
             @Override
             public void onClick(View v, int position, VideoFile videoFile) {
+                VideoFD videoFD = new VideoFD();
+                videoFD.setPath(videoFile.getPath());
                 ARouter.getInstance().build(PlayRouter.PLAY_ROUTE).withParcelable(
-                        AppConstants.ARG_ONE,videoFile
+                        AppConstants.ARG_ONE,videoFD
                 ).navigation();
             }
         });
@@ -120,6 +165,17 @@ public class MainActivity extends BaseActivity {
             public void onResult(List<Directory<VideoFile>> directories) {
                 LoggerManager.d(TAG,"" + directories.size());
                 ArrayList<Directory> list = new ArrayList<>(directories);
+                List<Directory> videoFiles = mVideoFolderRecycleAdapter.getDataSet();
+                for (int i = 0;i < directories.size();i ++) {
+                    for (Directory directory : videoFiles) {
+                        if (directories.get(i).equals(directory)) {
+                            directories.remove(i);
+                            i --;
+                            break;
+                        }
+                    }
+                }
+                list.addAll(videoFiles);
                 Collections.sort(list, new Comparator<Directory>() {
                     @Override
                     public int compare(Directory o1, Directory o2) {

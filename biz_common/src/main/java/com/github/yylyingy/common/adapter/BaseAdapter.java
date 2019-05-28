@@ -25,13 +25,6 @@ public abstract class BaseAdapter<T, VH extends RecyclerView.ViewHolder> extends
     }
 
     public void add(List<T> list) {
-//        for (int i = 0;i < list.size();i ++) {
-//            for (int j = 0;j < mList.size();j ++) {
-//                if (list.get(i).equals(mList.get(j))) {
-//                    mList.add(list.get(i));
-//                }
-//            }
-//        }
         mList.addAll(list);
         notifyDataSetChanged();
     }

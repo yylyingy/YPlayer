@@ -2,4 +2,8 @@
 <resources>
     <color name="biz_home_BgItem">#353535</color>
     <color name="biz_home_ShadowItem">#94333232</color>
+
+    <color name="biz_home_memu_background">#802C2C2C</color>
+
+    <color name="biz_home_dialog_half_transparent">#7F050505</color>
 </resources>

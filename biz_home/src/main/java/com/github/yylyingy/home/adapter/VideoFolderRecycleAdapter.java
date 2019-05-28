@@ -14,6 +14,10 @@ import com.github.yylyingy.common.util.AppUtil;
 import com.github.yylyingy.home.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -73,6 +77,31 @@ public class VideoFolderRecycleAdapter extends BaseAdapter<Directory,
 
     public void setOnFolderClickListener(OnFolderClickListener onFolderClickListener) {
         mOnFolderClickListener = onFolderClickListener;
+    }
+
+    @Override
+    public void add(List<Directory> list) {
+        //use hashmap to help remove repeat Directory
+        HashMap<String,Directory> hashSet = new HashMap<>();
+        for (int i = 0;i < getDataSet().size();i ++) {
+            hashSet.put(getDataSet().get(i).getPath(),getDataSet().get(i));
+        }
+        int j = 0;
+        while (j < list.size()) {
+            if (null != hashSet.get(list.get(j).getPath())) {
+                list.remove(j);
+            } else {
+                j ++;
+            }
+        }
+        getDataSet().addAll(list);
+        Collections.sort(getDataSet(), new Comparator<Directory>() {
+            @Override
+            public int compare(Directory o1, Directory o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+        notifyDataSetChanged();
     }
 
     public interface OnFolderClickListener {

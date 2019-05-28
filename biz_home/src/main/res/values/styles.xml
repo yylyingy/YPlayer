@@ -4,4 +4,13 @@
         <item name="android:button">@null</item>
         <item name="android:background">@drawable/biz_home_memu_btn</item>
     </style>
+    <style name="net_path_dialog" parent="@style/Theme.AppCompat.Dialog.Alert">
+        <!--<item name="android:windowFrame">@null</item>-->
+        <!--<item name="android:windowIsFloating">true</item>&lt;!&ndash;是否浮现在activity之上&ndash;&gt;-->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+<!--        <item name="android:windowNoTitle">true</item>&lt;!&ndash;无标题&ndash;&gt;-->
+        <item name="android:windowBackground">@color/biz_home_dialog_half_transparent</item><!--背景透明-->
+<!--        <item name="android:backgroundDimEnabled">false</item>&lt;!&ndash;模糊&ndash;&gt;-->
+    </style>
+
 </resources>

@@ -34,9 +34,10 @@
                 android:layout_marginRight="@dimen/dp_10"
                 android:layout_gravity="center">
                 <ImageButton
+                    android:id="@+id/memu"
                     style="@style/MainMemu"
-                    android:layout_width="@dimen/dp_20"
-                    android:layout_height="@dimen/dp_20"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
                     android:layout_gravity="center"/>
             </LinearLayout>
 

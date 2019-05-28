@@ -1,5 +1,6 @@
 package com.github.yylyingy.common.mvp.base;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -63,6 +64,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void setContentView(View view) {
         super.setContentView(view);
         initSystemStatusBar();
+    }
+
+    protected Context getContext() {
+        return this;
     }
 
     //
