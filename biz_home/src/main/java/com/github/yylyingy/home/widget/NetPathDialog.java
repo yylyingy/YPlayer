@@ -34,25 +34,31 @@ public class NetPathDialog extends AlertDialog {
                             WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         }
-        findViewById(R.id.confirm).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (null != mCallBack) {
-                    mCallBack.onConfirm();
+        View confirm = findViewById(R.id.confirm);
+        if (null != confirm) {
+            confirm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (null != mCallBack) {
+                        mCallBack.onConfirm();
+                    }
                 }
-            }
-        });
-        findViewById(R.id.cannel).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (null != mCallBack) {
-                    mCallBack.onCancel();
+            });
+        }
+        View cancel = findViewById(R.id.cancel);
+        if (null != cancel) {
+            cancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (null != mCallBack) {
+                        mCallBack.onCancel();
+                    }
+                    if (null != mOnCancelListener) {
+                        mOnCancelListener.onCancel(NetPathDialog.this);
+                    }
                 }
-                if (null != mOnCancelListener) {
-                    mOnCancelListener.onCancel(NetPathDialog.this);
-                }
-            }
-        });
+            });
+        }
 
     }
 

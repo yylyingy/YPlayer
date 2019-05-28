@@ -6,4 +6,6 @@
 
     <string name="confirm">确定</string>
     <string name="cancel">取消</string>
+    <string name="net_path_tips">请输入网址:</string>
+    <string name="net_path_tips2">例如 http://www.example.com/video.mkv</string>
 </resources>
