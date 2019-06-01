@@ -3,8 +3,12 @@ package com.github.yylyingy.play.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -19,11 +23,12 @@ import com.github.yylyingy.common.widget.media.AndroidMediaController;
 import com.github.yylyingy.common.widget.media.IjkVideoView;
 import com.github.yylyingy.play.R;
 
-@Route(path = PlayRouter.PLAY_ROUTE,name = "播放")
+@Route(path = PlayRouter.PLAY_ROUTE, name = "播放")
 public class PlayActivity extends BaseActivity {
     IjkVideoView mIjkVideoView;
     private AndroidMediaController mMediaController;
     VideoFD videoFD;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,21 @@ public class PlayActivity extends BaseActivity {
             videoFD = savedInstanceState.getParcelable(AppConstants.ARG_ONE);
         }
         startPlay();
+        mIjkVideoView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                        WindowManager.LayoutParams.FLAG_FULLSCREEN);// 设置全屏
+                return false;
+            }
+        });
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
     }
 
     @Override
@@ -46,7 +66,7 @@ public class PlayActivity extends BaseActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putParcelable(AppConstants.ARG_ONE,videoFD);
+        outState.putParcelable(AppConstants.ARG_ONE, videoFD);
         super.onSaveInstanceState(outState);
     }
 
@@ -59,7 +79,17 @@ public class PlayActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         mIjkVideoView.stopPlayback();
-        LoggerManager.d(TAG,"destory");
+        LoggerManager.d(TAG, "destory");
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mMediaController.isShowing()) {
+            mMediaController.hide();
+        } else {
+            super.onBackPressed();
+        }
     }
 
     private void startPlay() {

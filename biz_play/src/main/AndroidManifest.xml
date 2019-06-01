@@ -911,6 +911,7 @@
         <!-- singleTask :only one instance in an activity task -->
         <activity
             android:name=".view.PlayActivity"
+            android:configChanges="orientation|screenSize"
             android:launchMode="singleTask">
         </activity>
     </application>

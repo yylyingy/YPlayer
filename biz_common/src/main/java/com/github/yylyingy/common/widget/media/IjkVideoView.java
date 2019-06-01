@@ -48,6 +48,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import tv.danmaku.ijk.media.exo.IjkExoMediaPlayer;
 import tv.danmaku.ijk.media.player.AndroidMediaPlayer;
@@ -736,13 +737,28 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
         }
     }
 
+
+//    @Override
+//    public void setOnClickListener(@Nullable OnClickListener l) {
+//        super.setOnClickListener(l);
+//    }
+
     @Override
-    public boolean onTouchEvent(MotionEvent ev) {
+    public boolean performClick() {
         if (isInPlaybackState() && mMediaController != null) {
             toggleMediaControlsVisiblity();
         }
-        return false;
+        return super.performClick();
+
     }
+
+//    @Override
+//    public boolean onTouchEvent(MotionEvent ev) {
+//        if (isInPlaybackState() && mMediaController != null) {
+//            toggleMediaControlsVisiblity();
+//        }
+//        return super.onTouchEvent(ev);
+//    }
 
     @Override
     public boolean onTrackballEvent(MotionEvent ev) {
