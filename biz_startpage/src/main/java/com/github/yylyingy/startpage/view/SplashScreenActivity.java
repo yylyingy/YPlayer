@@ -2,10 +2,17 @@ package com.github.yylyingy.startpage.view;
 
 
 import android.Manifest;
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -16,6 +23,7 @@ import com.github.yylyingy.common.arouter.StartPagerRouter;
 import com.github.yylyingy.common.grant.callback.CommonPermissionCallBack;
 import com.github.yylyingy.common.grant.core.PermissionRequestFactory;
 import com.github.yylyingy.common.mvp.base.BaseActivity;
+import com.github.yylyingy.common.util.ScreenUtil;
 import com.github.yylyingy.startpage.R;
 
 
@@ -41,29 +49,7 @@ public class SplashScreenActivity extends BaseActivity {
 
             @Override
             public void onRequestAllow(String... strings) {
-                new Thread(){
-                    @Override
-                    public void run() {
-                        try {
-                            Thread.sleep(1200);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        new Handler(Looper.getMainLooper()).post(new Runnable() {
-                            @Override
-                            public void run() {
-                                ARouter.getInstance().build(HomePage.HOME_PAGE).navigation(SplashScreenActivity.this,
-                                        new NavCallback() {
-                                            @Override
-                                            public void onArrival(Postcard postcard) {
-                                                finish();
-                                            }
-                                        });
-                            }
-                        });
-                    }
-
-                }.start();
+                animStart(findViewById(R.id.yplayer_layout));
             }
         });
     }
@@ -75,7 +61,52 @@ public class SplashScreenActivity extends BaseActivity {
     }
 
     private void animStart(View view) {
+        ObjectAnimator scaleX1 = ObjectAnimator.ofFloat(view, "scaleX"
+                , 1.0f, 0.98f);
+        ObjectAnimator scaleY1 = ObjectAnimator.ofFloat(view, "scaleY"
+                , 1.0f, 0.98f);
+        ObjectAnimator scaleX2 = ObjectAnimator.ofFloat(view, "scaleX"
+                , 0.98f, 2f);
+        ObjectAnimator scaleY2 = ObjectAnimator.ofFloat(view, "scaleY"
+                , 0.98f, 2f);
+        ObjectAnimator pvhAlpha = ObjectAnimator.ofFloat(view,"alpha", 1f, 0f);
+        AnimatorSet scaleSmall = new AnimatorSet();
+        scaleSmall.playTogether(scaleX1,scaleY1);
+        scaleSmall.setDuration(300);
+        AnimatorSet scaleBig = new AnimatorSet();
+        scaleBig.setDuration(1000);
+        scaleBig.playTogether(scaleX2,scaleY2,pvhAlpha);
+        AnimatorSet mAnimatorSetBack = new AnimatorSet();
+        mAnimatorSetBack.setInterpolator(new AccelerateInterpolator());
+        mAnimatorSetBack.playSequentially(scaleSmall,scaleBig);
+        mAnimatorSetBack.start();
+        mAnimatorSetBack.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
 
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                ARouter.getInstance().build(HomePage.HOME_PAGE).navigation(SplashScreenActivity.this,
+                        new NavCallback() {
+                            @Override
+                            public void onArrival(Postcard postcard) {
+                                finish();
+                            }
+                        });
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
     }
 
 }
