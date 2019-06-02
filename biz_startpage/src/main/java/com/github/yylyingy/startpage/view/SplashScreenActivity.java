@@ -5,6 +5,7 @@ import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -24,12 +25,13 @@ import com.github.yylyingy.common.grant.callback.CommonPermissionCallBack;
 import com.github.yylyingy.common.grant.core.PermissionRequestFactory;
 import com.github.yylyingy.common.mvp.base.BaseActivity;
 import com.github.yylyingy.common.util.ScreenUtil;
+import com.github.yylyingy.common.widget.systemstatusbar.SystemBarTool;
 import com.github.yylyingy.startpage.R;
 
 
 @Route(path = StartPagerRouter.START_PAGE_ROUTER,name = "启动页")
 public class SplashScreenActivity extends BaseActivity {
-
+    AnimatorSet mAnimationSet = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +62,26 @@ public class SplashScreenActivity extends BaseActivity {
         requestPermission();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (null != mAnimationSet) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                mAnimationSet.pause();
+            }
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (null != mAnimationSet) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                mAnimationSet.resume();
+            }
+        }
+    }
+
     private void animStart(View view) {
         ObjectAnimator scaleX1 = ObjectAnimator.ofFloat(view, "scaleX"
                 , 1.0f, 0.98f);
@@ -77,6 +99,7 @@ public class SplashScreenActivity extends BaseActivity {
         scaleBig.setDuration(1000);
         scaleBig.playTogether(scaleX2,scaleY2,pvhAlpha);
         AnimatorSet mAnimatorSetBack = new AnimatorSet();
+        mAnimationSet = mAnimatorSetBack;
         mAnimatorSetBack.setInterpolator(new AccelerateInterpolator());
         mAnimatorSetBack.playSequentially(scaleSmall,scaleBig);
         mAnimatorSetBack.start();

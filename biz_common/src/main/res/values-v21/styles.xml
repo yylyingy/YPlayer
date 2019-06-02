@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="BasePrimaryTheme" mce_bogus="1" parent="@style/BaseTheme">
-        <item name="android:windowTranslucentStatus">false</item>
-        <item name="android:windowTranslucentNavigation">true</item>
+        <!-- Status Bar -->
+        <item name="android:windowTranslucentStatus">true</item>
         <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <!--<item name="android:windowTranslucentStatus" tools:targetApi="19">true</item>-->
-        <!--<item name="colorControlNormal">@color/tuandai_yellow</item>-->
-        <!--<item name="colorControlActivated">@color/tuandai_yellow</item>-->
-        <!--<item name="colorAccent">@color/tuandai_yellow</item>-->
-        <!--<item name="colorPrimary">@color/tuand.ai_yellow</item>-->
-        <!--<item name="colorPrimaryDark">@color/black_zero</item>-->
-        <!--<item name="colorControlHighlight">@color/tuandai_yellow</item>-->
-        <!--<item name="colorButtonNormal">@color/tuandai_yellow</item>-->
-        <!--&lt;!&ndash; <item name="android:background">@color/app_background</item> &ndash;&gt;-->
-        <!--<item name="android:alertDialogTheme">@style/AppCompat_dialog</item>-->
-        <!--<item name="android:dialogTheme">@style/AppCompat_dialog</item>-->
     </style>
     <style name="ViewRipple" >
         <item name="android:background">@drawable/lib_view_ripple</item>

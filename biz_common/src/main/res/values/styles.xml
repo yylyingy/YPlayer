@@ -8,17 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="BasePrimaryTheme" mce_bogus="1" parent="@style/BaseTheme">
-        <!--<item name="android:windowTranslucentStatus" tools:targetApi="19">true</item>-->
-        <!--<item name="colorControlNormal">@color/tuandai_yellow</item>-->
-        <!--<item name="colorControlActivated">@color/tuandai_yellow</item>-->
-        <!--<item name="colorAccent">@color/tuandai_yellow</item>-->
-        <!--<item name="colorPrimary">@color/tuand.ai_yellow</item>-->
-        <!--<item name="colorPrimaryDark">@color/black_zero</item>-->
-        <!--<item name="colorControlHighlight">@color/tuandai_yellow</item>-->
-        <!--<item name="colorButtonNormal">@color/tuandai_yellow</item>-->
-        <!--&lt;!&ndash; <item name="android:background">@color/app_background</item> &ndash;&gt;-->
-        <!--<item name="android:alertDialogTheme">@style/AppCompat_dialog</item>-->
-        <!--<item name="android:dialogTheme">@style/AppCompat_dialog</item>-->
     </style>
 
     <style name="ThemeActivity" mce_bogus="1" parent="@style/BasePrimaryTheme">
@@ -28,7 +17,8 @@
     <style name="MainActivityTheme" parent="@style/BasePrimaryTheme">
     </style>
 
-    <style name="SplashActivityTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <style name="SplashActivityTheme" parent="@style/ThemeActivity">
+        <item name="android:windowBackground">@drawable/test</item>
     </style>
 
     <style name="activityAnimation">
