@@ -50,6 +50,11 @@ dependencies {
     //other
     api rootProject.ext.dependencies['logger']
     api rootProject.ext.dependencies['glide']
+
+    annotationProcessor rootProject.ext.dependencies['room-compiler'] // compiler 需要用 room 的
+    api  rootProject.ext.dependencies['wcdb-room']  // 代替 room-runtime，同时也不需要再引用 wcdb-android
+    api  rootProject.ext.dependencies['wcdb-android']
+    api  rootProject.ext.dependencies['room-runtime']
     api project(':ijkplayer-exo')
     api project(':ijkplayer-java')
 }

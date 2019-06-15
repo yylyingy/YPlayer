@@ -1,6 +1,8 @@
 package com.github.yylyingy.home.view;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -34,13 +36,38 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.UUID;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
-
+/***
+ *
+ *
+ *                                                    __----~~~~~~~~~~~------___
+ *                                   .  .   ~~//====......          __--~ ~~
+ *                   -.            \_|//     |||\\  ~~~~~~::::... /~
+ *                ___-==_       _-~o~  \/    |||  \\            _/~~-
+ *        __---~~~.==~||\=_    -_--~/_-~|-   |\\   \\        _/~
+ *    _-~~     .=~    |  \\-_    '-~7  /-   /  ||    \      /
+ *  .~       .~       |   \\ -_    /  /-   /   ||      \   /
+ * /  ____  /         |     \\ ~-_/  /|- _/   .||       \ /
+ * |~~    ~~|--~~~~--_ \     ~==-/   | \~--===~~        .\
+ *          '         ~-|      /|    |-~\~~       __--~~
+ *                      |-~~-_/ |    |   ~\_   _-~            /\
+ *                           /  \     \__   \/~                \__
+ *                       _--~ _/ | .-~~____--~-/                  ~~==.
+ *                      ((->/~   '.|||' -_|    ~~-/ ,              . _||
+ *                                 -_     ~\      ~~---l__i__i__i--~~_/
+ *                                 _-~-__   ~)  \--______________--~~
+ *                               //.-~~~-~_--~- |-------~~~~~~~~
+ *                                      //.-~~~--\
+ *                               神兽保佑
+ *                              代码无BUG!
+ */
 @Route(path = HomePage.HOME_PAGE,name = "主页")
 public class MainActivity extends BaseActivity {
+    SharedPreferences sp ;
     TextView mTvTitle;
     View mMemu;
     @BindView(R2.id.recycle_view)
@@ -145,6 +172,23 @@ public class MainActivity extends BaseActivity {
                 ).navigation();
             }
         });
+        sp = getSharedPreferences("tt", MODE_PRIVATE);
+        SharedPreferences.Editor edit = sp.edit();
+        edit.putBoolean("56535e61-7709-4e03-b6e4-bcaf1d02833e",true);
+        edit.putBoolean("366f2a25-8920-43f6-accc-3ae3630369e6",true);
+        edit.putBoolean("84215d09-bd64-4fcd-93fe-5d8e3b838445",true);
+        edit.apply();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                for (int i = 0;i < 100000;i ++) {
+//                    SharedPreferences sp = getSharedPreferences("tt", MODE_PRIVATE);
+//                    SharedPreferences.Editor edit = sp.edit();
+//                    edit.putBoolean(UUID.randomUUID().toString(), false);
+//                    edit.commit();
+//                }
+//            }
+//        }).start();
     }
 
     private void requestReadPermission() {

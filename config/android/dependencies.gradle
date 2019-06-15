@@ -25,12 +25,12 @@ rootProject.ext {
     dependencies = [
 
             //android-support
-            "support-annotations"           : "com.android.support:support-annotations:${supportVersion}",
-            "support-v4"                    : "com.android.support:support-v4:${supportVersion}",
+//            "support-annotations"           : "com.android.support:support-annotations:${supportVersion}",
+//            "support-v4"                    : "com.android.support:support-v4:${supportVersion}",
             "appcompat"                     : "androidx.appcompat:appcompat:1.0.2",
-            "cardview-v7"                   : "com.android.support:cardview-v7:${supportVersion}",
-            "design"                        : "com.android.support:design:${supportVersion}",
-            "springAnim"                    : "com.android.support:support-dynamic-animation:${supportVersion}",
+//            "cardview-v7"                   : "com.android.support:cardview-v7:${supportVersion}",
+//            "design"                        : "com.android.support:design:${supportVersion}",
+//            "springAnim"                    : "com.android.support:support-dynamic-animation:${supportVersion}",
             "constraint-layout"             : "androidx.constraintlayout:constraintlayout:1.1.3",
             "recycleview"                   : "androidx.recyclerview:recyclerview:1.0.0",
 
@@ -51,6 +51,7 @@ rootProject.ext {
             "aourter"                       : "com.alibaba:arouter-compiler:1.1.2.1",
             "aourter-api"                   : "com.alibaba:arouter-api:1.5.0",
             "butterknife-compiler"          : "com.jakewharton:butterknife-compiler:10.1.0",
+            "room-compiler"                 : "android.arch.persistence.room:compiler:1.1.1",
 
             //testCompile
             "junit"                         : "junit:junit:4.12",
@@ -78,6 +79,9 @@ rootProject.ext {
 
             "glide"                         :  "com.github.bumptech.glide:glide:4.9.0",
 
+            "wcdb-room"                     : "com.tencent.wcdb:room:1.0.8",
+            "wcdb-android"                  : "com.tencent.wcdb:wcdb-android:1.0.8",
+            "room-runtime"                  : "android.arch.persistence.room:runtime:1.1.1",
             //stetho网络抓包
             "stetho"                        : "com.facebook.stetho:stetho:1.5.0",
             "stetho-ok"                     : "com.facebook.stetho:stetho-okhttp3:1.5.0",

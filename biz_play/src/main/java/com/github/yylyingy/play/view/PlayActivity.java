@@ -1,7 +1,5 @@
 package com.github.yylyingy.play.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -12,11 +10,11 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.github.yylyingy.common.arouter.PlayRouter;
 import com.github.yylyingy.common.constant.AppConstants;
+import com.github.yylyingy.common.db.DB;
+import com.github.yylyingy.common.db.user.Record;
 import com.github.yylyingy.common.log.LoggerManager;
-import com.github.yylyingy.common.mediafilter.entity.VideoFile;
 import com.github.yylyingy.common.mvp.base.BaseActivity;
 import com.github.yylyingy.common.util.VideoFD;
 import com.github.yylyingy.common.widget.media.AndroidMediaController;
@@ -88,6 +86,18 @@ public class PlayActivity extends BaseActivity {
         if (mMediaController.isShowing()) {
             mMediaController.hide();
         } else {
+            if (mIjkVideoView.getCurrentPosition() < mIjkVideoView.getDuration()) {
+                Record record = DB.getRecordData(this).getRecordDao().getByPath(mIjkVideoView.getUri().toString());
+                if (null == record) {
+                    record = new Record();
+                    record.path = mIjkVideoView.getUri().toString();
+                    record.progress = mIjkVideoView.getCurrentPosition();
+                    DB.getRecordData(this).getRecordDao().insert(record);
+                } else {
+                    record.progress = mIjkVideoView.getCurrentPosition();
+                    DB.getRecordData(this).getRecordDao().update(record);
+                }
+            }
             super.onBackPressed();
         }
     }
@@ -101,11 +111,17 @@ public class PlayActivity extends BaseActivity {
         mIjkVideoView.stopPlayback();
         mMediaController = new AndroidMediaController(this, false);
         mIjkVideoView.setMediaController(mMediaController);
+        Record record = null;
         if (!TextUtils.isEmpty(videoFD.getPath())) {
             mIjkVideoView.setVideoPath(videoFD.getPath());
+            record = DB.getRecordData(this).getRecordDao().getByPath(videoFD.getPath());
         } else {
             mIjkVideoView.setVideoURI(videoFD.getUri());
+            record = DB.getRecordData(this).getRecordDao().getByPath(videoFD.getUri().toString());
         }
         mIjkVideoView.start();
+        if (null != record) {
+            mIjkVideoView.seekTo(record.progress);
+        }
     }
 }
